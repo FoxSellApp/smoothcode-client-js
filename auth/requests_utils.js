@@ -1,11 +1,14 @@
-import generateHmac from "./utils";
+const generateHmac = require("./utils");
 
-export const isDashboardRequest = (requestHmac, clientSecret, shop) => {
+const isDashboardRequest = (requestHmac, clientSecret, shop) => {
     return generateHmac(clientSecret, shop) === requestHmac
 }
 
-export const isWebhookRequest = (requestHmac, clientSecret, webhookData) => {
+const isWebhookRequest = (requestHmac, clientSecret, webhookData) => {
     const webhookStringData = JSON.stringify(webhookData);
 
     return generateHmac(clientSecret, webhookStringData) === requestHmac
 }
+
+exports.isDashboardRequest = isDashboardRequest
+exports.isWebhookRequest = isWebhookRequest

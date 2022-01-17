@@ -1,7 +1,8 @@
-import {createHmac} from "crypto";
+const crypto = require('crypto')
+
 
 const generateHmac = (secret, baseString, digest='sha256') => {
-    return createHmac(digest, secret).update(baseString).digest('hex')
+    return crypto.createHmac(digest, secret).update(baseString).digest('hex')
 }
 
-export default generateHmac
+module.exports = generateHmac
