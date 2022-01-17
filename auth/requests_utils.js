@@ -9,4 +9,3 @@ export const isWebhookRequest = (requestHmac, clientSecret, webhookData) => {
 
     return generateHmac(clientSecret, webhookStringData) === requestHmac
 }
-
