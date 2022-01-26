@@ -26,7 +26,7 @@ smoothcode.isDashboardRequest(requestHmac, clientSecret, shop) // returns True i
 const smoothcode = require('smoothcode-client')
 
 // SmoothCode sends hmac in the Authorization Header of the request
-// It is hmac of the webhook data signed by your App Client Secret
+// It is hmac of the webhook id signed by your App Client Secret
 
 smoothcode.isWebhookRequest(requestHmac, clientSecret, webhookData) // returns True if the request is valid
 ```
