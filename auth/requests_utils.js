@@ -5,7 +5,7 @@ const isDashboardRequest = (requestHmac, clientSecret, shop) => {
 }
 
 const isWebhookRequest = (requestHmac, clientSecret, webhookData) => {
-    const webhookId = webhookData.id;
+    const webhookId = webhookData.id.toString();
 
     return generateHmac(clientSecret, webhookId) === requestHmac
 }
