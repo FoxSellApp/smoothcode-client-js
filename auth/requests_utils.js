@@ -5,9 +5,9 @@ const isDashboardRequest = (requestHmac, clientSecret, shop) => {
 }
 
 const isWebhookRequest = (requestHmac, clientSecret, webhookData) => {
-    const webhookStringData = JSON.stringify(webhookData);
+    const webhookId = webhookData.id.toString();
 
-    return generateHmac(clientSecret, webhookStringData) === requestHmac
+    return generateHmac(clientSecret, webhookId) === requestHmac
 }
 
 exports.isDashboardRequest = isDashboardRequest
