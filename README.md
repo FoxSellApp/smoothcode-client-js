@@ -30,4 +30,14 @@ const smoothcode = require('smoothcode-client')
 
 smoothcode.isWebhookRequest(requestHmac, clientSecret, webhookData) // returns True if the request is valid
 ```
+
+* `isGDPRWebhookRequest(requestHmac, clientSecret, webhookData)` - This method verifies if the webhook request is coming from `SmoothCode`
+```javascript
+const smoothcode = require('smoothcode-client')
+
+// SmoothCode sends hmac in the Authorization Header of the request
+// It is hmac of the shop id signed by your App Client Secret
+
+smoothcode.isGDPRWebhookRequest(requestHmac, clientSecret, webhookData) // returns True if the request is valid
+```
 ***
