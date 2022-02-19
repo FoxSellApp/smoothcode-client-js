@@ -1,6 +1,6 @@
 {
   "name": "smoothcode-client",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "SmoothCode client to easily authenticate and make requests to SmoothCode Servers",
   "main": "index.js",
   "scripts": {
